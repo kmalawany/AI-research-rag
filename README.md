@@ -1,6 +1,8 @@
 # AI-research-rag
 RAG-powered question answering system over AI research papers with topic search and paper summarization.
 
+- **Generation:** [Ollama Llama 3.2 (3B)](https://ollama.ai/library/llama3.2)  
+- **Embeddings:** [nomic-embed-text](https://huggingface.co/nomic-ai/nomic-embed-text-v1)  
 - **Backend:** FastAPI (serves the RAG graph)  
 - **Frontend:** Streamlit (chat-style UI)  
 - **Database:** pgvector (PostgreSQL extension for vector storage)
@@ -13,12 +15,22 @@ RAG-powered question answering system over AI research papers with topic search 
 - **Chunking strategy** for full papers to improve retrieval quality
 - Chat history with interactive UI
 - Dockerized pgvector database
+- Uses **Ollama Llama 3.2 (3B)** for text generation  
+- Uses **nomic-embed-text** embeddings with LangChain for semantic search  
 ----------------------------------------------------------------------
 - ## System Diagram
 ![System Diagram](Figure_1.png)
 ----------------------------------------------------------------------
 ## 🛠 Setup
+### 0. Install Ollama
+his project uses [Ollama](https://ollama.ai/) to run **Llama 3.2 (3B)** and **nomic-embed-text** locally.  
 
+- Download and install Ollama: [https://ollama.ai/download](https://ollama.ai/download)  
+- Pull the required model:
+  ```
+  ollama pull llama3.2:3b
+  ollama pull nomic-embed-text
+  ```
 ### 1. Clone the repo
 ```bash
 git clone https://github.com/kmalawany/AI-research-rag.git
