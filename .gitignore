@@ -1,4 +1,4 @@
 .env
 others/
 .idea/
-__pycahce__/
+__pycache__/
