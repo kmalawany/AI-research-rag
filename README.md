@@ -13,7 +13,7 @@ RAG-powered question answering system over AI research papers with topic search 
 - Semantic search over abstracts and full-text papers
 - Summarization and explanation of research papers
 - **Chunking strategy** for full papers to improve retrieval quality
-- Chat history with interactive UI
+- Simple UI for asking questions (Streamlit)
 - Dockerized pgvector database
 - Uses **Ollama Llama 3.2 (3B)** for text generation  
 - Uses **nomic-embed-text** embeddings with LangChain for semantic search  
