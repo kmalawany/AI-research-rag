@@ -23,7 +23,7 @@ RAG-powered question answering system over AI research papers with topic search 
 ----------------------------------------------------------------------
 ## 🛠 Setup
 ### 0. Install Ollama
-his project uses [Ollama](https://ollama.ai/) to run **Llama 3.2 (3B)** and **nomic-embed-text** locally.  
+This project uses [Ollama](https://ollama.ai/) to run **Llama 3.2 (3B)** and **nomic-embed-text** locally.  
 
 - Download and install Ollama: [https://ollama.ai/download](https://ollama.ai/download)  
 - Pull the required model:
@@ -32,7 +32,7 @@ his project uses [Ollama](https://ollama.ai/) to run **Llama 3.2 (3B)** and **no
   ollama pull nomic-embed-text
   ```
 ### 1. Clone the repo
-```bash
+```
 git clone https://github.com/kmalawany/AI-research-rag.git
 cd ai-research-rag
 ```
