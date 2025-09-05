@@ -17,7 +17,7 @@ RAG-powered question answering system over AI research papers with topic search 
 - ## System Diagram
 ![System Diagram](Figure_1.png)
 ----------------------------------------------------------------------
-## 🛠️ Setup
+## 🛠 Setup
 
 ### 1. Clone the repo
 ```bash
@@ -40,9 +40,16 @@ pip install -r requirements.txt
 https://www.kaggle.com/datasets/Cornell-University/arxiv
 
 ### 5. Generate and store embeddings
-
 ```
 python create_vector_database.py [File path]
+```
+### 6. Start the FastAPI backend
+```
+uvicorn main:app --reload
+```
+### 7. Start the Streamlit UI
+```
+streamlit run app.py
 ```
 
 
