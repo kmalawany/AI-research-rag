@@ -26,15 +26,15 @@ cd ai-research-rag
 ```
 ### 2. Create .env file
 #### Create a .env file in the project root with the following variables:
-
+```
 CONNECTION_NAME=your_connection_string_here (CONNECTION_NAME → Your pgvector/Postgres connection string)
 ABSTRACT_COLLECTION=abstracts
 PAPERS_COLLECTION=papers
+```
 
 ### 3. Install dependencies
 ```
 pip install -r requirements.txt
-
 ```
 ### 4. Download Arxiv dataset
 https://www.kaggle.com/datasets/Cornell-University/arxiv
@@ -43,7 +43,6 @@ https://www.kaggle.com/datasets/Cornell-University/arxiv
 
 ```
 python create_vector_database.py [File path]
-
 ```
 
 
