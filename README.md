@@ -1,4 +1,4 @@
-# AI-research-rag
+![demo (1)](https://github.com/user-attachments/assets/1460cb5d-7d62-44ba-a25a-22939c1da1db)# AI-research-rag
 RAG-powered question answering system over AI research papers with topic search and paper summarization.
 
 - **Generation:** [Ollama Llama 3.2 (3B)](https://ollama.ai/library/llama3.2)  
@@ -65,7 +65,8 @@ streamlit run app.py
 ```
 
 #### Demo
-![Demo](demo.mp4)
+![Demo]![demo (1)](https://github.com/user-attachments/assets/fda61708-9c0a-42ab-8adc-dd29d0166670)
+
 
 
 
