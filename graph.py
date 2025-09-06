@@ -1,10 +1,6 @@
-from typing import Annotated, Optional, Literal, List, TypedDict
-from langchain_ollama import ChatOllama
-from langchain_google_genai import GoogleGenerativeAI
-from pprint import pprint
+from typing import Literal
 from langgraph.graph import StateGraph, START, END
 from query_classification import classify_query
-from langchain_core.documents import Document
 from retrieval.topic_retrieval import retrieve_topic
 from retrieval.summary_retrieval import summary_retrieve
 from generation.topic_generation import generate_topic
@@ -13,13 +9,18 @@ from langchain_core.messages import AIMessage
 from pdf.pdf_handling import get_paper, generate_paper_embeddings
 from state import State
 from dotenv import load_dotenv
+from model import llm
+#from langchain.globals import set_debug
+
+#set_debug(True)
 
 load_dotenv()
-llm = ChatOllama(model="llama3.2:3b", temperature=0)
+
+llm = llm
 
 
 def decide_agent(state) -> Literal['summary', 'topic_search', 'out_of_context']:
-    if state['category'] == 'summarization/explanation':
+    if state['category'] == 'summarization_explanation':
         return 'summary'
     elif state['category'] == 'topic_search':
         return 'topic_search'
@@ -60,4 +61,3 @@ builder.add_edge('generate_topics', END)
 builder.add_edge('out_of_context', END)
 
 graph = builder.compile()
-

@@ -1,6 +1,5 @@
 from typing import TypedDict, Literal
-from langchain_ollama import ChatOllama
-
+from model import llm
 Category = Literal["topic_search", "summarization/explanation", "out_of_scope"]
 
 
@@ -8,7 +7,7 @@ class ClassifyQuery(TypedDict):
     category: Category
 
 
-llm = ChatOllama(model="llama3.2:3b", temperature=0)
+llm = llm
 
 
 def classify_prompt(query) -> str:
@@ -24,7 +23,10 @@ def classify_prompt(query) -> str:
                 Show me recent work on diffusion models in computer vision. Expected answer: topic search
                 What’s new in reinforcement learning with language models? Expected answer: topic search
                 What is contrastive learning? Expected answer: topic search
+                tell me about large vision models Expected answer: topic search
+                Tell me examples of AI being used by economists Expected answer: topic search
                 Explain the attention mechanism with examples. Expected answer: Summarization / Explanation
+                tell me about the architecture of SAM(segment anything) model Expected answer: Summarization / Explanation
                 Summarize Distributionally Robust Receive Combining paper in simple terms Expected answer: Summarization / Explanation
                 Can you explain the loss function described in the appendix? Expected answer: Summarization / Explanation
                 What’s the weather in Paris today? Expected answer: out of scope
@@ -33,13 +35,14 @@ def classify_prompt(query) -> str:
                 Can you help me debug my Python code? Expected answer: out of scope
                 in Denoising Diffusion Probabilistic Models paper: What are diffusion probabilistic models, and how do they generate images? Expected answer: Summarization / Explanation
                 show me examples of skin cancer detection models Expected answer: topic search
-                Tell me examples of AI being used by economists Expected answer: topic search
-                tell me about the architecture of SAM(segment anything) model Expected answer: Summarization / Explanation
+
                 
                 Query: {query}
                 
-                instructions: respond with only one word from the three categories topic_search, summarization/explanation
-                              or out_of_scope
+                instructions: respond with EXACTLY one of these three tokens (no punctuation, no extra words):
+                - topic_search
+                - summarization_explanation
+                - out_of_scop
     '''
 
     return prompt
