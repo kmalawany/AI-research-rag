@@ -64,6 +64,9 @@ uvicorn main:app --reload
 streamlit run app.py
 ```
 
+#### Demo
+![Demo](https://drive.google.com/file/d/1uTk4bkvymy2j735jCxN3aN7zZ18NRi3S/view?usp=sharing)
+
 
 
 
