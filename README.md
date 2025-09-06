@@ -1,5 +1,6 @@
-![demo (1)](https://github.com/user-attachments/assets/1460cb5d-7d62-44ba-a25a-22939c1da1db)# AI-research-rag
-RAG-powered question answering system over AI research papers with topic search and paper summarization.
+![demo (1)](https://github.com/user-attachments/assets/1460cb5d-7d62-44ba-a25a-22939c1da1db)
+
+# AI-research-rag RAG-powered question answering system over AI research papers with topic search and paper summarization.
 
 - **Generation:** [Ollama Llama 3.2 (3B)](https://ollama.ai/library/llama3.2)  
 - **Embeddings:** [nomic-embed-text](https://huggingface.co/nomic-ai/nomic-embed-text-v1)  
@@ -63,9 +64,6 @@ uvicorn main:app --reload
 ```
 streamlit run app.py
 ```
-
-#### Demo
-![Demo](demo.gif)
 
 
 
