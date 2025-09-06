@@ -65,7 +65,7 @@ streamlit run app.py
 ```
 
 #### Demo
-![Demo]![demo (1)](https://github.com/user-attachments/assets/fda61708-9c0a-42ab-8adc-dd29d0166670)
+![Demo](demo.gif)
 
 
 
