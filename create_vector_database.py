@@ -66,7 +66,7 @@ def filter_and_clean_df(records):
 
     docs = load_data('arxiv_ai_updated.csv')
     vector_store = pgvector(connection=os.getenv('CONNECTION_NAME'),
-                            collection_name=os.getenv('CONNECTION_NAME'))
+                            collection_name=os.getenv('ABSTRACT_COLLECTION'))
     print(docs[0])
     batch_size = 500
     for i in tqdm(range(0, len(docs), batch_size)):
