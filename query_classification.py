@@ -42,7 +42,7 @@ def classify_prompt(query) -> str:
                 instructions: respond with EXACTLY one of these three tokens (no punctuation, no extra words):
                 - topic_search
                 - summarization_explanation
-                - out_of_scop
+                - out_of_scope
     '''
 
     return prompt
