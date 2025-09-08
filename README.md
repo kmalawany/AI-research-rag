@@ -19,6 +19,9 @@
 - Uses **Ollama Llama 3.2 (3B)** for text generation  
 - Uses **nomic-embed-text** embeddings with LangChain for semantic search  
 ----------------------------------------------------------------------
+- ## Evaluation
+- ⚠️ Work in progress. Test datasets and evaluation scripts will be added gradually.
+----------------------------------------------------------------------
 - ## System Diagram
 ![System Diagram](Figure_1.png)
 ----------------------------------------------------------------------
