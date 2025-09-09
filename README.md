@@ -33,6 +33,7 @@
 | out_of_scope              | **1.000** | **1.000** | **1.000** |
 | summarization_explanation | **1.000** | 0.900  | 0.947    |
 | topic_search              | 0.909     | **1.000** | 0.952    |
+| **Accuracy**               | 0.967     |        
 
 - ⚠️ Work in progress. Test datasets and evaluation scripts will be added gradually.
 ----------------------------------------------------------------------
