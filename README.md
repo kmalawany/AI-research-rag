@@ -20,6 +20,20 @@
 - Uses **nomic-embed-text** embeddings with LangChain for semantic search  
 ----------------------------------------------------------------------
 - ## Evaluation
+- ### Query Classification
+- The **query classifier** is implemented as a **few-shot prompt-based LLM classifier**.
+- It takes a user query and classifies it into one of three categories:
+- `topic_search` → exploring research areas or asking for related papers.  
+- `summarization_explanation` → asking to summarize or explain a specific paper/topic.  
+- `out_of_scope` → queries unrelated to AI research papers.
+- We evaluated on **60 queries** (20 per class).  
+
+| Class                     | Precision | Recall | F1-score |
+|----------------------------|-----------|--------|----------|
+| out_of_scope              | **1.000** | **1.000** | **1.000** |
+| summarization_explanation | **1.000** | 0.900  | 0.947    |
+| topic_search              | 0.909     | **1.000** | 0.952    |
+
 - ⚠️ Work in progress. Test datasets and evaluation scripts will be added gradually.
 ----------------------------------------------------------------------
 - ## System Diagram
