@@ -1,5 +1,6 @@
-# AI-research-rag
-RAG-powered question answering system over AI research papers with topic search and paper summarization.
+![demo (1)](https://github.com/user-attachments/assets/1460cb5d-7d62-44ba-a25a-22939c1da1db)
+
+# AI-research-rag RAG-powered question answering system over AI research papers with topic search and paper summarization.
 
 - **Generation:** [Ollama Llama 3.2 (3B)](https://ollama.ai/library/llama3.2)  
 - **Embeddings:** [nomic-embed-text](https://huggingface.co/nomic-ai/nomic-embed-text-v1)  
@@ -17,6 +18,23 @@ RAG-powered question answering system over AI research papers with topic search 
 - Dockerized pgvector database
 - Uses **Ollama Llama 3.2 (3B)** for text generation  
 - Uses **nomic-embed-text** embeddings with LangChain for semantic search  
+----------------------------------------------------------------------
+- ## Evaluation
+- ### Query Classification
+- The **query classifier** is implemented as a **few-shot prompt-based LLM classifier**.
+- It takes a user query and classifies it into one of three categories:
+- `topic_search` → exploring research areas or asking for related papers.  
+- `summarization_explanation` → asking to summarize or explain a specific paper/topic.  
+- `out_of_scope` → queries unrelated to AI research papers.
+- We evaluated on **60 queries** (20 per class).  
+
+| Class                     | Precision | Recall | F1-score |
+|----------------------------|-----------|--------|----------|
+| out_of_scope              | **1.000** | **1.000** | **1.000** |
+| summarization_explanation | **1.000** | 0.900  | 0.947    |
+| topic_search              | 0.909     | **1.000** | 0.952    |
+
+- ⚠️ Work in progress. Test datasets and evaluation scripts will be added gradually.
 ----------------------------------------------------------------------
 - ## System Diagram
 ![System Diagram](Figure_1.png)
@@ -64,8 +82,6 @@ uvicorn main:app --reload
 streamlit run app.py
 ```
 
-#### Demo
-![Demo](https://drive.google.com/file/d/1uTk4bkvymy2j735jCxN3aN7zZ18NRi3S/view?usp=sharing)
 
 
 
