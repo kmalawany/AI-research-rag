@@ -1,13 +1,6 @@
-from langsmith import Client
-from langsmith.evaluation import evaluate
 from sklearn.metrics import classification_report, confusion_matrix
-from langsmith import Client
-from dotenv import load_dotenv
 from query_classification import classify_query
-import os
 
-load_dotenv()
-client = Client()
 
 dataset = [
     # --- Category 1: Topic Search ---
@@ -98,15 +91,3 @@ report = classification_report(y_true, y_pred, digits=3)
 conf_matrix = confusion_matrix(y_true, y_pred)
 print(report)
 print(conf_matrix)
-
-client.create_run(
-    project_name='research-paper-testing',
-    name="aggregate-metrics",
-    inputs={},
-    outputs={
-        "classification_report": report,
-        "confusion_matrix": conf_matrix
-    },
-    run_type="tool",
-    api_key=os.getenv('LANGSMITH_API_KEY')
-)
