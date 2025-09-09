@@ -10,6 +10,9 @@ from pdf.pdf_handling import get_paper, generate_paper_embeddings
 from state import State
 from dotenv import load_dotenv
 from model import llm
+from langgraph.checkpoint.postgres import PostgresSaver
+import os
+import psycopg
 #from langchain.globals import set_debug
 
 #set_debug(True)
@@ -59,5 +62,6 @@ builder.add_edge('generate_answer', END)
 builder.add_edge('generate_topics', END)
 
 builder.add_edge('out_of_context', END)
+
 
 graph = builder.compile()
