@@ -1,4 +1,5 @@
 # AI-research-rag
+![demo](demo.gif)
 RAG-powered question answering system over AI research papers with topic search and paper summarization.
 
 - **Generation:** [Ollama Llama 3.2 (3B)](https://ollama.ai/library/llama3.2)  
