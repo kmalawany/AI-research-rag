@@ -21,12 +21,12 @@
 ----------------------------------------------------------------------
 - ## Evaluation
 - ### Query Classification
-- The **query classifier** is implemented as a **few-shot prompt-based LLM classifier**.
-- It takes a user query and classifies it into one of three categories:
-- `topic_search` → exploring research areas or asking for related papers.  
-- `summarization_explanation` → asking to summarize or explain a specific paper/topic.  
-- `out_of_scope` → queries unrelated to AI research papers.
-- We evaluated on **60 queries** (20 per class).  
+  The **query classifier** is implemented as a **few-shot prompt-based LLM classifier**.
+  It takes a user query and classifies it into one of three categories:
+  `topic_search` → exploring research areas or asking for related papers.  
+  `summarization_explanation` → asking to summarize or explain a specific paper/topic.  
+  `out_of_scope` → queries unrelated to AI research papers.
+  We evaluated on **60 queries** (20 per class).  
 
 | Class                     | Precision | Recall | F1-score |
 |----------------------------|-----------|--------|----------|
@@ -35,7 +35,30 @@
 | topic_search              | 0.909     | **1.000** | 0.952    |
 | **Accuracy**               |          |           |0.967      |
 
-- ⚠️ Work in progress. Test datasets and evaluation scripts will be added gradually.
+- ### Retrieval Evaluation Results
+
+  We evaluate retrieval performance on the LitSearch dataset using **Precision@10** and **Recall@10**. (Princeton NLP, [LitSearch Paper](https://huggingface.co/datasets/princeton-nlp/LitSearch)) 
+  
+  Since exact string matching between retrieved and ground truth documents is not sufficient,  
+  we use a lightweight LLM to judge whether each retrieved document is relevant to the query and the ground truth.  
+  The metrics are then computed based on these LLM relevance judgments.
+
+| Metric        | Score  |
+|---------------|--------|
+| Precision@10  | 0.3886 |
+| Recall@10     | 0.9991 |
+
+  ### How to Reproduce the Results
+  #### 1. Download the dataset
+Clone the Hugging Face dataset repo (it contains the `.parquet` files):
+```bash
+git clone https://huggingface.co/datasets/princeton-nlp/LitSearch
+```
+  Run evaluation
+  ```bash
+   python -m  evaluations.eval_retrival [query_dir] [corpus_clean_dir] [k]
+  ```
+  -⚠️ Work in progress. Test datasets and evaluation scripts will be added gradually.
 ----------------------------------------------------------------------
 - ## System Diagram
 ![System Diagram](Figure_1.png)
