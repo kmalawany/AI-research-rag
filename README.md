@@ -28,12 +28,12 @@
   `out_of_scope` → queries unrelated to AI research papers.
   We evaluated on **60 queries** (20 per class).  
 
-| Class                     | Precision | Recall | F1-score |
-|----------------------------|-----------|--------|----------|
-| out_of_scope              | **1.000** | **1.000** | **1.000** |
-| summarization_explanation | **1.000** | 0.900  | 0.947    |
-| topic_search              | 0.909     | **1.000** | 0.952    |
-| **Accuracy**               |          |           |0.967      |
+  | Class                     | Precision | Recall | F1-score |
+  |----------------------------|-----------|--------|----------|
+  | out_of_scope              | **1.000** | **1.000** | **1.000** |
+  | summarization_explanation | **1.000** | 0.900  | 0.947    |
+  | topic_search              | 0.909     | **1.000** | 0.952    |
+  | **Accuracy**               |          |           |0.967      |
 
 - ### Retrieval Evaluation Results
 
@@ -43,10 +43,10 @@
   we use a lightweight LLM to judge whether each retrieved document is relevant to the query and the ground truth.  
   The metrics are then computed based on these LLM relevance judgments.
 
-| Metric        | Score  |
-|---------------|--------|
-| Precision@10  | 0.3886 |
-| Recall@10     | 0.9991 |
+  | Metric        | Score  |
+  |---------------|--------|
+  | Precision@10  | 0.3886 |
+  | Recall@10     | 0.9991 |
 
   ### How to Reproduce the Results
   #### 1. Download the dataset
